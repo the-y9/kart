@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../store/cartSlice";
 import { Link } from "react-router-dom";
 import Cart from "./CartPage";
+import { initialState } from "../store/cartSlice"
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -38,10 +39,14 @@ function ProductsPage() {
           </ul>
           <Link to="/cart">Cart</Link>
         </Col>
+
         <Col md={6}>
           <Cart />
         </Col>
       </Row>
+      <div>
+        { initialState.items }
+      </div>
     </Container>
   );
 }
